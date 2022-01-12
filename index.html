@@ -9,26 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Gustavo Alpendre Zanardini Schoneweg</h1>
-
-    <h2>Contact Information</h2>
-    <dl>
-        <dt>Email</dt>
-        <dd>
-            <a href="mailto:guschoneweg@hotmail.com">guschoneweg@hotmail.com</a>
-        </dd>
-
-        <dt>Phone</dt>
-        <dd>
-            <a href="tel:5541998411537@hotmail.com">+55 (41) 99841-1537</a>
-        </dd>
-    </dl>
-
-    <h2>Education</h2>
-    <dl>
-        <dt>College</dt>
-        <dd>Bachelor’s degree in Sistemas de Informação</dd>
-    </dl>
+    <button onclick="pintrk('track', 'pagevisit')">Page visit</button>
+    <button onclick="pintrk('track', 'signup')">Sign up</button>
+    <button onclick="pintrk('track', 'watchvideo', {video_title: 'How to style your Parker Boots'})">Watch video</button>
+    <button onclick="pintrk('track', 'lead', {lead_type: 'Newsletter'})">Lead</button>
+    <button onclick="pintrk('track', 'search', {search_query: 'boots'})">Search</button>
+    <button onclick="pintrk('track', 'viewcategory')">View category</button>
+    <button onclick="pintrk('track', prompt())">Custom</button>
 <!-- Pinterest Tag -->
 <script>
 !function(e){if(!window.pintrk){window.pintrk = function () {
