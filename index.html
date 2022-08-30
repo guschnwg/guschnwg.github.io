@@ -14,7 +14,14 @@
       Scale Converter
     </h1>
 
-    <div v-scope="{ scales: [] }">
+    <div v-scope="{ value: { scale: 'Base', value: 37 }, scales: [{name: 'Base', min: 0, max: 100}, {name: 'To', min: -200, max: 1000}] }">
+      <div>
+        <select v-model="value.scale">
+          <option v-for="scale in scales" :value="scale.name">{{ scale.name }}</option>    
+        </select>
+        <input v-model="value.value" />
+      </div>
+
       <div v-for="scale in scales">
         <input v-model="scale.name" />
         :
@@ -25,10 +32,6 @@
       
       <button @click="scales = [...scales, {name: prompt('Name?') || Date.now(), min: 0, max: 100}]">inc</button>  
     </div>
-  </div>
-  <div v-scope="{ count: 0 }">
-    {{ count }}
-    <button @click="count++">inc</button>
   </div>
 </body>
 </html>
