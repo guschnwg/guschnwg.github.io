@@ -20,30 +20,36 @@
   </script>
 
   <div>
-    <h1>
-      Scale Converter
-    </h1>
-
-    <div v-scope="{ value: { scale: 'Base', value: 37 }, scales: [{ name: 'Base', min: 0, max: 100 }, { name: 'To', min: -200, max: 1000 }] }">
-      <div>
-        <select v-model="value.scale">
-          <option v-for="scale in scales" :value="scale.name">{{ scale.name }}</option>    
-        </select>
-        <input v-model="value.value" />
+    <div>
+      <h1>
+        Scale Converter
+      </h1>
+  
+      <div v-scope="{ value: { scale: 'Base', value: 37 }, scales: [{ name: 'Base', min: 0, max: 100 }, { name: 'To', min: -200, max: 1000 }] }">
+        <div>
+          <select v-model="value.scale">
+            <option v-for="scale in scales" :value="scale.name">{{ scale.name }}</option>    
+          </select>
+          <input v-model="value.value" />
+        </div>
+  
+        <div v-for="scale in scales">
+          {{ scale.name }}
+          :
+          <input v-model="scale.min" />
+          -
+          {{ convertValue(scales.find(s => s.name === value.scale), scale, value.value) }}
+          -
+          <input v-model="scale.max" />
+        </div>
+        
+        <button @click="scales = [...scales, {name: prompt('Name?') || Date.now(), min: 0, max: 100}]">+</button>  
       </div>
-
-      <div v-for="scale in scales">
-        {{ scale.name }}
-        :
-        <input v-model="scale.min" />
-        -
-        {{ convertValue(scales.find(s => s.name === value.scale), scale, value.value) }}
-        -
-        <input v-model="scale.max" />
-      </div>
-      
-      <button @click="scales = [...scales, {name: prompt('Name?') || Date.now(), min: 0, max: 100}]">inc</button>  
     </div>
+  </div>
+
+  <div>
+
   </div>
 </body>
 </html>
