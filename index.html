@@ -9,6 +9,16 @@
 <body>
   <script src="https://unpkg.com/petite-vue" defer init></script>
 
+  <script>
+    function convertValue (fromScale, toScale, value) {
+      if (fromScale.min == toScale.max && fromScale.max == toScale.max) {
+        return value;
+      }
+
+      return -1;
+    }
+  </script>
+
   <div>
     <h1>
       Scale Converter
@@ -26,6 +36,8 @@
         <input v-model="scale.name" />
         :
         <input v-model="scale.min" />
+        -
+        {{ convertValue(convertValue(scales.find(s => s.name === value.scale), scale, value.value)) }}
         -
         <input v-model="scale.max" />
       </div>
