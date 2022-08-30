@@ -37,7 +37,7 @@
         :
         <input v-model="scale.min" />
         -
-        {{ convertValue(convertValue(scales.find(s => s.name === value.scale), scale, value.value)) }}
+        {{ convertValue(scales.find(s => s.name === value.scale), scale, value.value) }}
         -
         <input v-model="scale.max" />
       </div>
