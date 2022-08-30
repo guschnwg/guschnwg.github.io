@@ -4,38 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="p:domain_verify" content="6b937f96188bdf648fd3370290d71418"/>
-    <meta name="p:domain_verify" content="a2831050b801aea0b07ad3f9af20add6"/>
-    <title>Document</title>
+    <title>Giovanna Zanardini</title>
 </head>
 <body>
-    <button onclick="pintrk('track', 'pagevisit')">Page visit</button>
-    <button onclick="pintrk('track', 'signup')">Sign up</button>
-    <button onclick="pintrk('track', 'watchvideo', {video_title: 'How to style your Parker Boots'})">Watch video</button>
-    <button onclick="pintrk('track', 'lead', {lead_type: 'Newsletter'})">Lead</button>
-    <button onclick="pintrk('track', 'search', {search_query: 'boots'})">Search</button>
-    <button onclick="pintrk('track', 'viewcategory')">View category</button>
-    <button onclick="pintrk('track', prompt())">Custom</button>
-<!-- Pinterest Tag -->
-<script>
-!function(e){if(!window.pintrk){window.pintrk = function () {
-window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-  n=window.pintrk;n.queue=[],n.version="3.0";var
-  t=document.createElement("script");t.async=!0,t.src=e;var
-  r=document.getElementsByTagName("script")[0];
-  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-    pintrk('load', '2612348025344', {em: 'lala@adroll.com'});
-    pintrk('page');
-    pintrk('track', 'checkout', {
-        value: 100,
-        order_quantity: 1,
-        currency: 'USD'
-    });
-</script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt=""
-  src="https://ct.pinterest.com/v3/?event=init&tid=2612348025344&pd[em]=<hashed_email_address>&noscript=1" />
-</noscript>
-<!-- end Pinterest Tag -->
+  <script src="https://unpkg.com/petite-vue" defer init></script>
+
+  <!-- anywhere on the page -->
+  <div v-scope="{ count: 0 }">
+    {{ count }}
+    <button @click="count++">inc</button>
+  </div>
 </body>
 </html>
