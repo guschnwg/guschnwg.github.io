@@ -24,7 +24,7 @@
       Scale Converter
     </h1>
 
-    <div v-scope="{ value: { scale: 'Base', value: 37 }, scales: [{name: 'Base', min: 0, max: 100}, {name: 'To', min: -200, max: 1000}] }">
+    <div v-scope="{ value: { scale: 'Base', value: 37 }, scales: [{ name: 'Base', min: 0, max: 100 }, { name: 'To', min: -200, max: 1000 }] }">
       <div>
         <select v-model="value.scale">
           <option v-for="scale in scales" :value="scale.name">{{ scale.name }}</option>    
