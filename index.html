@@ -9,7 +9,19 @@
 <body>
   <script src="https://unpkg.com/petite-vue" defer init></script>
 
-  <!-- anywhere on the page -->
+  <div>
+    <h1>
+      Scale Converter
+    </h1>
+
+    <div v-scope="{ scales: [] }">
+      <div v-for="scale in scales">
+        {{ scale.min }} {{ scale.nax }}
+      </div>
+      
+      <button @click="scales = [...scales, {min: 0, max: 100}]">inc</button>  
+    </div>
+  </div>
   <div v-scope="{ count: 0 }">
     {{ count }}
     <button @click="count++">inc</button>
