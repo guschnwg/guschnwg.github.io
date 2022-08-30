@@ -11,10 +11,6 @@
 
   <script>
     function convertValue (fromScale, toScale, value) {
-      if (fromScale.min == toScale.min && fromScale.max == toScale.max) {
-        return value;
-      }
-
       return toScale.min - ((fromScale.min - value) / fromScale.max) * toScale.max;
     }
   </script>
