@@ -10,8 +10,13 @@
 </head>
 
 <body>
+    <script>
+      const script = document.createElement('script');
+      script.src = "https://raw.githubusercontent.com/guschnwg/library/main/js/index.js?v=" + Math.random();
+      document.head.appendChild(script);
+    </script>
+
     <script src="https://unpkg.com/petite-vue" defer init></script>
-    <script src="https://raw.githubusercontent.com/guschnwg/library/main/js/index.js"></script>
 
     <div>
         <div>
