@@ -73,10 +73,38 @@
         adroll_version = "2.0";
 
         (function(w, d, e, o, a) {
+            w.__adroll_loaded2 = true;
+            w.adroll2 = w.adroll2 || [];
+            w.adroll2.f = [ 'setProperties', 'identify', 'track' ];
+            var roundtripUrl = "https://adroll-cdn-staging.s3.amazonaws.com/j/" + adroll_adv_id
+                    + "/roundtrip.js";
+            for (a = 0; a < w.adroll2.f.length; a++) {
+                w.adroll2[w.adroll2.f[a]] = w.adroll2[w.adroll2.f[a]] || (function(n) {
+                    return function() {
+                        w.adroll2.push([ n, arguments ])
+                    }
+                })(w.adroll2.f[a])
+            }
+
+            e = d.createElement('script');
+            o = d.getElementsByTagName('script')[0];
+            e.async = 1;
+            e.src = roundtripUrl;
+            o.parentNode.insertBefore(e, o);
+        })(window, document);
+        adroll.track("pageView");
+    </script>
+    
+    <script type="text/javascript">
+        adroll_adv_id = "RW2JAFJAABE47ESHEWQBHX";
+        adroll_pix_id = "MMDMADSAQNASLAJ2DFHKZX";
+        adroll_version = "2.0";
+
+        (function(w, d, e, o, a) {
             w.__adroll_loaded = true;
             w.adroll = w.adroll || [];
             w.adroll.f = [ 'setProperties', 'identify', 'track' ];
-            var roundtripUrl = "https://adroll-cdn-staging.s3.amazonaws.com/j/" + adroll_adv_id
+            var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id
                     + "/roundtrip.js";
             for (a = 0; a < w.adroll.f.length; a++) {
                 w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function(n) {
